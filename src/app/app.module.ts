@@ -6,20 +6,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { LoginModule } from './modules/login/login.module';
 import { LoginComponent } from './modules/login/login.component';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent
-
-    // DashboardComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    DashboardModule
-    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
