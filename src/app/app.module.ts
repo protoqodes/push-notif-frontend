@@ -4,19 +4,21 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { LoginComponent } from './modules/login/login.component';
+import { LoginModule } from './modules/login/login.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginComponent
+    
+
     // DashboardComponent
   ],
   imports: [
     BrowserModule,
     DashboardModule
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
