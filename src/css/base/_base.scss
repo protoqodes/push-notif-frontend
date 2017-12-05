@@ -1,0 +1,178 @@
+//main:../main.scss
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $dark-green;
+    text-decoration: none;
+  }
+}
+
+
+.btn,
+a {
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+
+  @include on-event() {
+    outline: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+/**
+ * Basic styles for input fields
+ */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-focus-ring-color: none;
+  outline: none;
+
+  @include on-event() {
+    outline: none;
+  }
+}
+
+//heading
+.heading-holder {
+  h4 {
+      display: inline-block;
+
+      font-size: 26px;
+      font-weight: bold;
+      color: $dark-green;
+      letter-spacing: 2px;
+  }
+
+  .btn-green {
+      display: inline-block;
+      padding: 4px 20px;
+      margin: -10px 0 0 15px;
+
+      font-size: 16px;
+      letter-spacing: 1px;
+  }
+}
+
+//nav
+.navbar-toggler {
+  position: relative;
+
+  padding: 10px 0;
+
+  border: 0;
+  border-radius: 0;
+
+  cursor: pointer;
+  @include transition(.3s ease-in-out);
+
+  .icon-bar {
+    display: block;
+    height: 4px;
+    width: 29px;
+
+    background: #fff;
+
+    @include transition(0.5s cubic-bezier(0.65, 0.05, 0.36, 1));
+
+    &+.icon-bar {
+      margin-top: 4px;
+    }
+  }
+
+  &.open-menu {
+    .icon-bar {
+      &:first-child {
+        @include transform(rotate(225deg) translate(-6px, -5px));
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:last-child {
+        @include transform(rotate(-225deg) translate(-6px, 6px));
+      }
+    }
+  }
+
+  &:after {
+    content: 'Menu';
+
+    position: absolute;
+    top: 10px;
+    left: 35px;
+
+    font-family: $text-font-lato-semibold;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+
+  @include on-event() {
+    outline: 0;
+  }
+}
+
+main {
+  padding: 95px 0 50px;
+  min-height: 100vh;
+
+  background-image: url("../assets/images/bg-dashboard.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body {
+  position: relative;
+  left: 0;
+
+  @include transition(.3s ease-in-out);
+
+  &.open-menu {
+    left: 300px;
+    overflow: hidden;
+
+    header {
+      nav {
+        left: 300px;
+
+        #menu {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@include respond-to(sm-down) {
+  .heading-holder {
+    h4 {
+        font-size: 24px;
+    }
+  }
+
+  .navbar-toggler {
+    &:after {
+      top: 14px;
+
+      font-size: 14px;
+    }
+  }
+}

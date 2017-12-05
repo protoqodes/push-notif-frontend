@@ -1,0 +1,166 @@
+//main: ../main.scss
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the dashboard page.
+// -----------------------------------------------------------------------------
+
+.dashboard {
+  .left {
+    padding: 0 30px 0 15px;
+
+    text-align: center;
+
+    img {
+      max-width: 200px;
+    }
+
+    .description {
+      padding: 20px 0;
+      margin-top: 50px;
+
+      font-family: $text-font-lato-bold;
+
+      background: #42b66d;
+      border-radius: 15px;
+
+      p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 290px;
+
+        font-size: 22px;
+        color: #fff;
+        letter-spacing: 2px;
+      }
+
+      h2 {
+        padding: 15px;
+
+        font-size: 32px;
+        font-family: $text-font-lato-bold;
+        color: #42b66d;
+
+        background: #fff;
+      }
+    }
+  }
+
+  .right {
+    padding: 0 15px 0 30px;
+
+    h4 {
+      font-family: $text-font-lato-bold;
+      font-size: 26px;
+      color: #42b66d;
+      letter-spacing: 2px;
+    }
+
+    .post-holder {
+      padding: 25px;
+      margin: 20px 0 30px;
+
+      background: #fff;
+
+      -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+      -moz-box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+      box-shadow: 0 0 15px 2px rgba(0,0,0,0.3);
+
+      h6 {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      p {
+        margin: 15px 0 10px;
+
+        font-size: 14px;
+        line-height: 20px;
+        text-indent: 25px;
+      }
+
+      ul {
+        margin: 0;
+      }
+
+      ul > li:not(:last-child):after {
+        content: '';
+
+        position: relative;
+
+        padding-right: 12px;
+
+        border-right: 1px solid #42b66d;
+      }
+
+      ul > li > a {
+        font-size: 14px;
+        color: #42b66d;
+
+        @include on-event() {
+          color: $dark-green;
+        }
+      }
+    }
+  }
+  @include respond-to(md-down) {
+    .left {
+      img {
+        max-width: 170px;
+      }
+
+      .description {
+        padding: 15px 0;
+        margin-top: 40px;
+
+        p {
+          padding: 0 15px;
+          max-width: 100%;
+
+          font-size: 16px;
+          letter-spacing: 1.5px;
+        }
+
+        h2 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  @include respond-to(sm-down) {
+    .left {
+      padding: 0 15px;
+
+      img {
+        max-width: 120px;
+      }
+
+      .description {
+        margin-top: 25px;
+
+        p {
+          max-width: 290px;
+        }
+      }
+    }
+
+    .right {
+      padding: 0 15px;
+      margin-top: 30px;
+
+      h4 {
+        font-size: 24px;
+      }
+
+      .post-holder {
+        padding: 25px 15px;
+
+        h6 {
+          font-size: 20px;
+        }
+
+        ul > li > a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

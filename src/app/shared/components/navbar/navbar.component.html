@@ -1,0 +1,36 @@
+<header>
+  <nav class="navbar fixed-top flex-row">
+    <button (click)="toggleNavbar()" class="navbar-toggler align-self-center">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <ul class="nav align-items-center ml-auto">
+      <li>
+        <form class="form-search">
+          <input class="input-search" type="search" name="" value="">
+          <button class="btn btn-submit" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </li>
+      <li><a href="#" class="notification"><i class="fa fa-bell-o"></i></a></li>
+      <li><a href="#" class="account">AC</a></li>
+    </ul>
+
+    <div class="navbar" id="menu">
+      <a><img class="logo" src="assets/images/logo.png" alt=""></a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Users</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Emails</a>
+        </li>
+      </ul>
+      <a href="/" class="btn btn-green btn-logout">Logout</a>
+    </div>
+  </nav>
+</header>

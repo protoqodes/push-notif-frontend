@@ -1,0 +1,103 @@
+//main:../main.scss
+
+.add-forms {
+  padding: 20px 20px 10px;
+  margin-top: 25px;
+
+  background: $brand-color;
+
+  box-shadow: 0 10px 30px 0 rgba( 0, 0, 0, .2 );
+
+  .form-group {
+    .form-control {
+      letter-spacing: .5px;
+
+      background: #fff;
+      border: 0;
+      border-radius: 0;
+    }
+
+    textarea {
+      height: 200px;
+
+      resize: none;
+    }
+
+    &.upload-holder {
+      position: relative;
+
+      padding: 20px;
+      margin: 0 0 20px;
+      width: 100%;
+
+      font-family: $text-font-lato-semibold;
+      font-size: 25px;
+      color: $dark-green;
+      text-align: center;
+
+      border: 5px dashed $dark-green;
+      border-radius: 10px;
+
+      input[type="file"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+
+        opacity: 0;
+      }
+
+      img {
+        margin-right: 10px;
+        width: 40px;
+      }
+    }
+  }
+
+  .actions {
+    .btn {
+      margin-bottom: 10px;
+    }
+  }
+
+  &.add-user-form {
+    .form-group {
+      &.upload-holder {
+        padding: 25px 20px;
+        margin: 0 15px 20px;
+        width: 100%;
+      }
+    }
+
+    .actions {
+      text-align: center;
+
+      .btn {
+        display: inline-block;
+        width: 150px;
+        margin: 0 5px 15px;
+      }
+    }
+  }
+
+  @include respond-to(sm-down) {
+    &.add-user-form {
+      .form-group {
+        &.upload-holder {
+          font-size: 20px;
+        }
+      }
+
+      .actions {
+        .btn {
+          display: block;
+          margin: 0 auto 15px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

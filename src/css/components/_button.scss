@@ -1,0 +1,56 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+
+.btn-green {
+    display: block;
+    padding: 10px;
+
+    font-size: 19px;
+    color: #fff;
+    letter-spacing: 3px;
+
+    background: #42b66d;
+    border: 2px solid #42b66d;
+    border-radius: 30px;
+
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        color: #42b66d;
+
+        background: transparent;
+
+        outline: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+
+.btn-white {
+  display: block;
+  padding: 8px 10px;
+
+  color: $brand-color;
+
+  background: #fff;
+  border-radius: 30px;
+}
+
+.btn-dark-green {
+  display: block;
+  padding: 8px 10px;
+
+  color: #fff;
+
+  background: $dark-green;
+  border-radius: 30px;
+}

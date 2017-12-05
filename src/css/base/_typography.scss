@@ -1,0 +1,12 @@
+//main:../main.scss
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font: normal 16px / 1.4 $text-font-lato;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $text-font-lato-semibold;
+}

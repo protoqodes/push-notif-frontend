@@ -1,0 +1,144 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+.login {
+    position: relative;
+    height: 100vh;
+
+    background-image: url("../assets/images/bg-login.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    // adjust
+    // overflow: hidden;
+
+    .holder {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+
+        padding: 32px 50px;
+        margin: auto;
+        max-width: 540px;
+        max-height: 470px;
+
+        background: #fff;
+        -webkit-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.3);
+        box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.3);
+
+        // adjust
+        /* &:after {
+            position: absolute;
+            top: 0;
+            right: -95%;
+            z-index: -1;
+            content: '';
+
+            width: 300%;
+            height: 460px;
+
+            background: #42b66d;
+            -webkit-transform: rotate(-38deg);
+            -ms-transform: rotate(-38deg);
+            transform: rotate(-38deg);
+        }
+        */
+
+        form {
+            img,
+            input,
+            .btn-green {
+                display: block;
+                margin: auto;
+            }
+
+            img {
+                margin-bottom: 35px;
+                max-width: 150px;
+            }
+
+            input {
+                padding: 8px 12px;
+                margin-top: 25px;
+                width: 100%;
+
+                color: #42b66d;
+                letter-spacing: 1.5px;
+
+                background: #f8f8f8;
+                border: 0;
+                border-bottom: 3px solid #42b66d;
+            }
+
+            input::-webkit-input-placeholder {
+                color: #42b66d;
+                letter-spacing: 1.5px;
+            }
+            input::-moz-placeholder {
+                color: #42b66d;
+                letter-spacing: 1.5px;
+            }
+            input:-ms-input-placeholder {
+                color: #42b66d;
+                letter-spacing: 1.5px;
+            }
+            input:-moz-placeholder {
+                color: #42b66d;
+                letter-spacing: 1.5px;
+            }
+
+            .btn-green {
+                margin-top: 40px;
+                max-width: 190px;
+            }
+        }
+    }
+
+    @include respond-to(sm-down) {
+        .holder {
+            padding: 20px 50px;
+            max-height: 300px;
+
+            form {
+                img {
+                    margin-bottom: 20px;
+                    max-width: 85px;
+                }
+
+                input {
+                    padding: 6px 10px;
+                    margin-top: 20px;
+
+                    font-size: 14px;
+                    letter-spacing: 1px;
+
+                    border-bottom: 2px solid #42b66d;
+                }
+
+                .btn-green {
+                    padding: 8px;
+                    margin-top: 25px;
+                    max-width: 140px;
+
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+
+    @include respond-to(xs) {
+        .holder {
+            padding: 20px 30px;
+            max-width: 90%;
+        }
+    }
+}
