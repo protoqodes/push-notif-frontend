@@ -1,0 +1,34 @@
+<main class="dashboard" *ngIf="hasData">
+  <div class="holder">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-5 left">
+          <img src="assets/images/logo.png" alt="Company Logo" />
+          <div class="description">
+            <p>City Information Office Angeles City</p>
+            <h2>PUBLIC ADVISORY APPLICATION</h2>
+          </div>
+        </div>
+        <div class="col-12 col-md-7 right">
+          <div class="heading-holder">
+            <h4>RECENT POSTS</h4>
+          </div>
+
+            <div *ngFor="let item of posts" class="post-holder">
+            <h6>{{item.title}}</h6>
+            <p>
+              {{item.description}}
+            </p>
+            <img width="100" src="{{item.img}}">
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item"><a [routerLink]="['/edit/post',item._id]" preserveQueryParams preserveFragment class="time">Edit</a></li>
+              <li class="list-inline-item"><a href="#" class="date">NOVEMBER 23, 2017</a></li>
+            </ul>
+            </div> 
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

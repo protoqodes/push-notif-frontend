@@ -1,10 +1,10 @@
 <main class="login">
     <div class="holder">
-        <form autocomplete="off">
+        <form #form="ngForm" (ngSubmit)="logForm(form.value)" autocomplete="off">
             <img src="assets/images/logo.png" alt=""/>
-            <input class="email" type="email" placeholder="Email Address" />
-            <input class="password" type="password" placeholder="Password" />
-            <a class="btn btn-green" href="dashboard">LOGIN</a>
+            <input ngModel name="email" class="email" type="email" placeholder="Email Address" />
+            <input ngModel name="password" class="password" type="password" placeholder="Password" />
+            <button type="submit" class="btn btn-green" href="dashboard">LOGIN</button>
         </form>
     </div>
 </main>
