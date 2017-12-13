@@ -14,6 +14,11 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AddPostModule } from './modules/dashboard/components/add-post/add-post.module'
 import { EditPostModule } from './modules/dashboard/components/edit-post/edit-post.module'
+import { AddUserModule } from './modules/dashboard/components/add-user/add-user.module'
+import { EditUserModule } from './modules/dashboard/components/edit-user/edit-user.module'
+import { UsersModule } from './modules/dashboard/components/users/users.module'
+
+
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: LoginComponent }
@@ -37,7 +42,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     DashboardModule,
     AddPostModule,
-    EditPostModule
+    EditPostModule,
+    AddUserModule,
+    UsersModule,
+    EditUserModule
   ],
   // Services
   providers: [SessionService],

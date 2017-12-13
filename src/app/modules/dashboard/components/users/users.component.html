@@ -5,7 +5,8 @@
         <div class="col-12 content">
           <div class="heading-holder">
             <h4>USERS</h4>
-            <a href="/add-post" class="btn btn-green">Add New</a>
+            <!-- <a href="/add-post" class="btn btn-green">Add New</a> -->
+            <a [routerLink]="['/users/add']" preserveQueryParams preserveFragment  class="btn btn-green">Add New</a>
           </div>
           <table class="table table-info">
             <thead>
@@ -14,26 +15,39 @@
                 <th>Last Name</th>
                 <th>Email Address</th>
                 <th>Phone Number</th>
-                <th>Password</th>
+                <th> Actions </th>
+                <!-- <th>Password</th> -->
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@gmail.com</td>
-                <td>09145582719</td>
-                <td>8$%iTu8j7w</td>
+              <tr *ngFor="let user of DataArray">
+                <td>{{user.first_name}}</td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{ user.mobile }}</td>
+                <td>
+                  <a [routerLink]="['/users/edit/', user._id]" preserveQueryParams preserveFragment  class="btn btn-green">Edit</a>
+                  <a [routerLink]="['/users/delete/', user._id]" preserveQueryParams preserveFragment  class="btn btn-green">Delete</a>
+                </td>
+                  <!-- <td>8$%iTu8j7w</td> -->
+                <!-- <td>8$%iTu8j7w</td> -->
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>Jane</td>
                 <td>Smith</td>
                 <td>jane@gmail.com</td>
                 <td>09145582719</td>
                 <td>9f4*6%tYha</td>
               </tr>
-              <tr>
+              <tr> -->
+                <!-- <td></td>
                 <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr> -->
+                <!-- <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -59,14 +73,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>

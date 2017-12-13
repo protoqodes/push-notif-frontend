@@ -6,19 +6,19 @@
           <div class="heading-holder">
             <h4>Add New User</h4>
           </div>
-          <div class="add-forms add-user-form">
+            <form #form="ngForm" (ngSubmit)="addUser(form.value)" class="add-forms">
             <div class="row">
               <div class="form-group col-12 col-md-6">
-                <input class="form-control" type="text" name="first_name" value="" placeholder="First Name">
+                <input class="form-control" type="text" name="first_name" [(ngModel)]="first_name" placeholder="First Name">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input class="form-control" type="text" name="last_name" value="" placeholder="Last Name">
+                <input class="form-control" type="text" name="last_name" [(ngModel)]="last_name" placeholder="Last Name">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input class="form-control" type="email" name="email_add" value="" placeholder="Email Address">
+                <input class="form-control" type="email" name="email_add" [(ngModel)]="email" placeholder="Email Address">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input class="form-control" type="text" name="phone_number" value="" placeholder="Phone Number">
+                <input class="form-control" type="text" name="phone_number" [(ngModel)]="phone_number" placeholder="Phone Number">
               </div>
               <div class="form-group upload-holder">
                 <input type="file" name="" value="">
@@ -26,11 +26,12 @@
                 <span>Upload a Photo</span>
               </div>
               <div class="actions col-12">
-                <a href="#" class="btn btn-white">Save</a>
-                <a href="#" class="btn btn-dark-green">Cancel</a>
+                <input type="submit" value="Publish" class="btn btn-white">
+                            <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green">Cancel</a>
+                <!-- <a href="#" class="btn btn-dark-green">Cancel</a> -->
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

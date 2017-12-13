@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import filestack from 'filestack-js';
 
-import { SessionService } from '../../../../session.service'; 
+import { SessionService } from '../../../../session.service';
 import { ActivatedRoute,Router } from '@angular/router';
 const apikey = 'AFHvRuXHQeevnhfnlqdyAz';
 const client = filestack.init(apikey);
@@ -14,7 +14,7 @@ export class EditPostComponent implements OnInit {
  file_url : any;
  title : any;
  description : any;
-  : any;
+  // : any;
 
   constructor(
     private api : SessionService,
@@ -23,15 +23,15 @@ export class EditPostComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.post_id = params['id']
-      this.api.Posts.view(params['id']).then(post =>{
-          this.title = post.title
-          this.description = post.description
-          this.file_url = post.img
-      })
-
-    })
+    // this.route.params.subscribe(params => {
+    //   this.post_id = params['id']
+    //   this.api.Posts.view(params['id']).then(post =>{
+    //       this.title = post.title
+    //       this.description = post.description
+    //       this.file_url = post.img
+    //   })
+    //
+    // })
   }
   fileUpload(){
   	client.pick().then(data => {
@@ -39,11 +39,11 @@ export class EditPostComponent implements OnInit {
   	});
   }
   editPost(data :any){
-  	console.log(data);
-  	console.log(this.file_url)
-  	this.api.Posts.edit(this.post_id,data.title,data.description,this.file_url)
-  	.then(post => {
-  		this.router.navigate(['/dashboard'])
-  	})
+  	// console.log(data);
+  	// console.log(this.file_url)
+  	// this.api.Posts.edit(this.post_id,data.title,data.description,this.file_url)
+  	// .then(post => {
+  	// 	this.router.navigate(['/dashboard'])
+  	// })
   }
 }
