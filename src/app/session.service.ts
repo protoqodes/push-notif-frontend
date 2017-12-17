@@ -29,12 +29,20 @@ export class SessionService {
                      return response.json();
               }).toPromise();
           },
-          list: () => {
-  	    		return this.http.get(Config.baseUrl + "/users/list")
-  	                .map(response => {
-  	              	 return response.json();
-  	          }).toPromise();
-  	    	},
+
+        list: () => {
+	    		return this.http.get(Config.baseUrl + "/users/list")
+	                .map(response => {
+	              	 return response.json();
+	          }).toPromise();
+	    },
+	    view: (first_name : string,last_name : string,mobile : string, email:string, id: string) => {
+	    		return this.http.get(Config.baseUrl + "/users/view" + id)
+	                .map(response => {
+	              	 return response.json();
+	          }).toPromise();
+	    },
+	    
 	 }
   Posts = {
 			add: (title: string,description : string,img : string) => {

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { EditUserComponent } from './edit-user.component';
+import { EditPostComponent } from './edit-post.component';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'user/edit/:id', component: EditUserComponent }
+      { path: 'edit/post/:id', component: EditPostComponent }
     ])
   ],
   exports: [RouterModule]
 })
-export class EditUserRoutingModule { }
+export class EditPostRoutingModule { }
