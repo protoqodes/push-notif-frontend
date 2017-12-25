@@ -41,10 +41,10 @@ export class EditUserComponent implements OnInit {
           this.user.username = user.username
           this.user.password = user.password
       })
-
+    
     })
   }
-
+  
   editPost(user :any){
   	// console.log(data);
   	// console.log(this.file_url)

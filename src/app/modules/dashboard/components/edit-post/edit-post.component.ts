@@ -31,7 +31,7 @@ export class EditPostComponent implements OnInit {
           this.description = post.description
           this.file_url = post.img
       })
-
+    
     })
   }
   fileUpload(){
