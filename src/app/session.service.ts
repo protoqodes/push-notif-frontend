@@ -17,24 +17,61 @@ export class SessionService {
 	              	 return response.json();
 	          }).toPromise();
 	    	},
-        add: (first_name: string,last_name : string,mobile : string, email: string) => {
+        add: (
+        	first_name: string,
+        	last_name : string,
+        	mobile : string,
+        	email: string,
+        	username: string,
+        	password: string) => {
               return this.http.post(Config.baseUrl + "/users/add",
                    {
                     first_name : first_name,
                     last_name : last_name,
                     mobile : mobile,
-                    email: email
+                    email: email,
+                    username: username,
+                    password : password
                   })
                     .map(response => {
                      return response.json();
               }).toPromise();
           },
-          list: () => {
-  	    		return this.http.get(Config.baseUrl + "/users/list")
-  	                .map(response => {
-  	              	 return response.json();
-  	          }).toPromise();
-  	    	},
+         edit: (
+         	user_id : string,
+        	first_name: string,
+        	last_name : string,
+        	mobile : string,
+        	email: string,
+        	username: string,
+        	password: string) => {
+              return this.http.post(Config.baseUrl + "/users/edit/" + user_id,
+                   {
+                    first_name : first_name,
+                    last_name : last_name,
+                    mobile : mobile,
+                    email: email,
+                    username: username,
+                    password : password
+                  })
+                    .map(response => {
+                     return response.json();
+              }).toPromise();
+          },
+
+        list: () => {
+	    		return this.http.get(Config.baseUrl + "/users/list")
+	                .map(response => {
+	              	 return response.json();
+	          }).toPromise();
+	    },
+	    view: (user_id : string) => {
+	    		return this.http.get(Config.baseUrl + "/users/view/" + user_id)
+	                .map(response => {
+	              	 return response.json();
+	          }).toPromise();
+	    },
+
 	 }
   Posts = {
 			add: (title: string,description : string,img : string) => {
