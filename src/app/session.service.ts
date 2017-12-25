@@ -71,7 +71,7 @@ export class SessionService {
 	              	 return response.json();
 	          }).toPromise();
 	    },
-	    
+
 	 }
   Posts = {
 			add: (title: string,description : string,img : string) => {
