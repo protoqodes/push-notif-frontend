@@ -11,10 +11,13 @@ const client = filestack.init(apikey);
   styleUrls: ['./edit-user.component.css']
 })
 export class EditUserComponent implements OnInit {
- file_url : any;
- title : any;
- description : any;
-  // : any;
+  public user_id: string;
+  public first_name: string;
+  public last_name : string;
+  public phone_number : string;
+  public email : string;
+  public username : string;
+  public password : string;
 
   constructor(
     private api : SessionService,
@@ -23,27 +26,35 @@ export class EditUserComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    console.log('jake');
     this.route.params.subscribe(params => {
-      this.post_id = params['id']
-      this.api.Posts.view(params['id']).then(post =>{
-          this.title = post.title
-          this.description = post.description
-          this.file_url = post.img
+
+      // console.log(params['id']);
+      this.user_id = params['id']
+      this.api.Users.view(params['id']).then(user =>{
+       
+            this.user_id = user._id;
+            this.first_name = user.first_name;
+            this.last_name  = user.last_name;
+            this.phone_number = user.mobile;
+            this.email = user.email;
+            this.username = user.username;
+            this.password = user.password;
       })
     
     })
+
+     console.log(this.first_name);
   }
   fileUpload(){
-  	client.pick().then(data => {
-  	this.file_url = data.filesUploaded[0].url
-  	});
+  	// client.pick().then(data => {
+  	// this.file_url = data.filesUploaded[0].url
+  	// });
   }
-  editPost(data :any){
-  	console.log(data);
-  	console.log(this.file_url)
-  	this.api.Posts.edit(this.post_id,data.title,data.description,this.file_url)
+  editUser(data :any){
+  	this.api.Users.edit(this.user_id,this.first_name,this.last_name,this.phone_number,this.email,this.username,this.password)
   	.then(post => {
-  		this.router.navigate(['/dashboard'])
+  		this.router.navigate(['/users'])
   	})
   }
 }
