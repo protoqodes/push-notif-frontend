@@ -15,6 +15,12 @@
                 <input class="form-control" type="text" name="last_name" [(ngModel)]="last_name" placeholder="Last Name">
               </div>
               <div class="form-group col-12 col-md-6">
+                <input class="form-control" type="text" name="username" [(ngModel)]="username" placeholder="Username">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <input class="form-control" type="password" name="password" [(ngModel)]="password" placeholder="password">
+              </div>
+              <div class="form-group col-12 col-md-6">
                 <input class="form-control" type="email" name="email_add" [(ngModel)]="email" placeholder="Email Address">
               </div>
               <div class="form-group col-12 col-md-6">
@@ -26,7 +32,7 @@
                 <span>Upload a Photo</span>
               </div>
               <div class="actions col-12">
-                <input type="submit" value="Publish" class="btn btn-white">
+                <input type="submit" value="Publish" class="btn btn-white" style="width: 100%;">
                             <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green">Cancel</a>
                 <!-- <a href="#" class="btn btn-dark-green">Cancel</a> -->
               </div>

@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   	this.api.Posts.list().then(posts =>{
       console.log(posts)
-  		this.posts = posts
+  		this.posts = posts.results
   		this.hasData =true
 
   	})
