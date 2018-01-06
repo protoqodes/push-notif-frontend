@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import filestack from 'filestack-js';
 
 import { SessionService } from '../../../../session.service'; 
+import {  Router } from '@angular/router';
 const apikey = 'AFHvRuXHQeevnhfnlqdyAz';
 const client = filestack.init(apikey);
 @Component({
@@ -13,7 +14,7 @@ export class AddPostComponent implements OnInit {
  file_url : any;
  title : any;
  description : any;
-  constructor(private api : SessionService) { }
+  constructor(private api : SessionService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -28,6 +29,7 @@ export class AddPostComponent implements OnInit {
   	this.api.Posts.add(data.title,data.description,this.file_url)
   	.then(post => {
   		console.log(post)
+      this.router.navigate(['/dashboard'])
   	})
   }
 }

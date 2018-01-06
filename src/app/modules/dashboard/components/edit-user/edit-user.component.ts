@@ -57,7 +57,7 @@ export class EditUserComponent implements OnInit {
       user.username,
       user.password)
   	.then(post => {
-  		this.router.navigate(['/dashboard'])
+  		this.router.navigate(['/user'])
   	})
   }
 }

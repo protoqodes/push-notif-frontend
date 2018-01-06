@@ -10,6 +10,7 @@ import { SessionService } from './session.service';
 import { HttpModule } from '@angular/http';
 
 import { NavbarComponent } from './shared/components/navbar/navbar.component'
+import { ActiveEmailComponent } from './shared/components/activate_email/active_email.component'
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AddPostModule } from './modules/dashboard/components/add-post/add-post.module'
@@ -21,6 +22,7 @@ import { UsersModule } from './modules/dashboard/components/users/users.module'
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'activated_user/:id', component: ActiveEmailComponent},
   { path: '', component: LoginComponent }
 ];
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NavbarComponent,
-    LoginComponent
+    LoginComponent,
+    ActiveEmailComponent
   ],
   //Modules
   imports: [

@@ -17,7 +17,7 @@ export class SessionService {
 	              	 return response.json();
 	          }).toPromise();
 	    	},
-        add: (first_name: string,last_name : string,mobile : string, email: string, username : string , password: string) => {
+        add: (first_name: string,last_name : string,mobile : string, email: string, username : string , password: string, is_active:number) => {
               return this.http.post(Config.baseUrl + "/users/add",
                    {
                     first_name : first_name,
@@ -26,6 +26,7 @@ export class SessionService {
                     email: email,
                     username: username,
                     password: password,
+                    is_active: is_active
                   })
                     .map(response => {
                      return response.json();

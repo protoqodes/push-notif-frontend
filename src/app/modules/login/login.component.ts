@@ -19,6 +19,11 @@ export class LoginComponent implements OnInit {
     console.log('test')
   	this.api.Users.login(data.email,data.password)
     .then(user =>{ 
+
+        if(user.user.is_active == 0){
+        throw new Error('Need to Confirm Email');
+      }
+      
       this.router.navigate(['/dashboard']);
     	console.log(user)
     })

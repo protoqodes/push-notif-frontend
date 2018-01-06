@@ -13,6 +13,9 @@ export class AddUserComponent implements OnInit {
   last_name : string;
   mobile : string;
   email : string;
+  username : string;
+  password : string;
+  is_active : number;
   constructor(
     private api : SessionService,
     private route: ActivatedRoute,
@@ -24,11 +27,12 @@ export class AddUserComponent implements OnInit {
 
   addUser(user){
     console.log(user);
-
-    this.api.Users.add(user.first_name,user.last_name,user.phone_number,user.email_add,user.username,user.password)
+    this.is_active = 0;
+    this.api.Users.add(user.first_name,user.last_name,user.phone_number,user.email_add,user.username,user.password,this.is_active)
     .then(post =>{
         console.log(post);
         console.log('added');
+        this.router.navigate(['/users'])
 
     });
 
