@@ -6,28 +6,60 @@
           <div class="heading-holder">
             <h4>Edit User</h4>
           </div>
-            <form #form="ngForm" (ngSubmit)="addUser(form.value)" class="add-forms">
+           <!--  <form #form="ngForm" (ngSubmit)="addUser(form.value)" class="add-forms">
             <div class="row">
               <div class="form-group col-12 col-md-6">
-                <input value="{this.user.first_name}" class="form-control" type="text" name="first_name" [(ngModel)]="first_name" placeholder="First Name">
+                <input value="{user.first_name}" class="form-control" type="text" name="first_name" ngModel placeholder="First Name">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input value="{this.user.last_name}" class="form-control" type="text" name="last_name" [(ngModel)]="last_name" placeholder="Last Name">
+                <input value="{user.last_name}" class="form-control" type="text" name="last_name" ngModel placeholder="Last Name">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input value="{this.user.username}" class="form-control" type="text" name="username" [(ngModel)]="username" placeholder="Last Name">
+                <input value="{user.username}" class="form-control" type="text" name="username" ngModel placeholder="Last Name">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input value="{this.user.password}" class="form-control" type="password" name="password" [(ngModel)]="password" placeholder="Last Name">
+                <input value="{user.password}" class="form-control" type="password" name="password" ngModel placeholder="Last Name">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input value="{this.user.email}" class="form-control" type="email" name="email_add" [(ngModel)]="email" placeholder="Email Address">
+                <input value="{user.email}" class="form-control" type="email" name="email_add" ngModel placeholder="Email Address">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input value="{this.user.phone_number}" class="form-control" type="text" name="phone_number" [(ngModel)]="phone_number" placeholder="Phone Number">
+                <input value="{user.phone_number}" class="form-control" type="text" name="phone_number" ngModel placeholder="Phone Number">
               </div>
               <div class="actions col-12">
                 <input type="submit" value="Publish" class="btn btn-white" style="width: 100%">
+                            <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green">Cancel</a>
+                <!-- <a href="#" class="btn btn-dark-green">Cancel</a> -->
+            <!--   </div>
+            </div>
+          </form> -->
+           <form #form="ngForm" (ngSubmit)="editUser(form.value)" class="add-forms">
+            <div class="row">
+              <div class="form-group col-12 col-md-6">
+                <input class="form-control" type="text" name="first_name" [(ngModel)]="first_name" placeholder="First Name">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <input class="form-control" type="text" name="last_name" [(ngModel)]="last_name" placeholder="Last Name">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <input class="form-control" type="email" name="email_add" [(ngModel)]="email" placeholder="Email Address">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <input class="form-control" type="text" name="phone_number" [(ngModel)]="phone_number" placeholder="Phone Number">
+              </div>
+               <div class="form-group col-12 col-md-6">
+                <input class="form-control" type="text" name="username" [(ngModel)]="username" placeholder="Username">
+              </div>
+              <div class="form-group col-12 col-md-6">
+                <input class="form-control" type="password" name="password" [(ngModel)]="password" placeholder="Password">
+              </div>
+              <div class="form-group upload-holder">
+                  <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="upload-btn btn-white">
+                  <img src="assets/images/icon-upload.png" alt="">
+                  <span>Upload a Photo</span>
+                </div>
+              <div class="actions col-12">
+                <input type="submit" value="Publish" class="btn btn-white">
                             <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green">Cancel</a>
                 <!-- <a href="#" class="btn btn-dark-green">Cancel</a> -->
               </div>

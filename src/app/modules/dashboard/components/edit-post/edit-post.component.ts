@@ -44,7 +44,7 @@ export class EditPostComponent implements OnInit {
   	console.log(this.file_url)
   	this.api.Posts.edit(this.post_id,data.title,data.description,this.file_url)
   	.then(post => {
-  		this.router.navigate(['/dashboard'])
+  		this.router.navigate(['/dashboard']);
   	})
   }
 }
