@@ -1,0 +1,32 @@
+<main class="emails">
+  <div class="holder">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 content">
+          <div class="heading-holder">
+            <h4>EMAILS</h4>
+          </div>
+          <table class="table table-info">
+            <thead>
+              <tr>
+                <th>From</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let comment of comments">
+                <td>{{comment.user_id[0].email}}</td>
+                <td>{{comment.post_id[0].title}}</td>
+                <td>{{comment.description}}</td>
+                <td>{{comment.date_time}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -14,6 +14,7 @@ import { ActiveEmailComponent } from './shared/components/activate_email/active_
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { AddPostModule } from './modules/dashboard/components/add-post/add-post.module'
+import { EmailModule } from './modules/dashboard/components/emails/email.module'
 import { EditPostModule } from './modules/dashboard/components/edit-post/edit-post.module'
 import { AddUserModule } from './modules/dashboard/components/add-user/add-user.module'
 import { EditUserModule } from './modules/dashboard/components/edit-user/edit-user.module'
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
     EditPostModule,
     AddUserModule,
     UsersModule,
-    EditUserModule
+    EditUserModule,
+    EmailModule
   ],
   // Services
   providers: [SessionService],

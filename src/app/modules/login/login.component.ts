@@ -7,7 +7,6 @@ import {  Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   constructor(
   	private api:SessionService,
   	private router: Router,
@@ -19,9 +18,9 @@ export class LoginComponent implements OnInit {
     console.log('test')
   	this.api.Users.login(data.email,data.password)
     .then(user =>{ 
-
-        if(user.user.is_active == 0){
-        throw new Error('Need to Confirm Email');
+        console.log(user);
+        if(user.is_active == 0){
+        throw new Error('Need to Confirm Code');
       }
       
       this.router.navigate(['/dashboard']);

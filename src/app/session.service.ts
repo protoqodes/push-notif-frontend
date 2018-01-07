@@ -8,7 +8,7 @@ export class SessionService {
   constructor(private http :Http) { }
   Users = {
 			login: (username: string,password : string) => {
-	          return this.http.post(Config.baseUrl + "/users/login",
+	          return this.http.post(Config.baseUrl + "/users/login/admin",
 	          		 {
 	          		  username : username,
 	          		  password : password
@@ -26,7 +26,7 @@ export class SessionService {
                     email: email,
                     username: username,
                     password: password,
-                    is_active: is_active,
+                    is_active: 1,
                     img : img
                   })
                     .map(response => {
@@ -107,6 +107,14 @@ export class SessionService {
 	              	 return response.json();
 	          }).toPromise();
 	    	},
-	 }
+	}
+	Comment = {
+		list : () =>{
+			return this.http.get(Config.baseUrl + "/comments/list").
+				  map(response=>{
+				  	return response.json();
+				  }).toPromise();
+		}
+	}
 
 }
