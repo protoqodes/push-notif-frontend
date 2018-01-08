@@ -22,9 +22,8 @@
                 <td>{{comment.post_id[0].title}}</td>
                 <td>{{comment.description}}</td>
                 <td>{{comment.date_time}}</td>
-                <td><a class="btn btn-green">Send Email</a>
+                <td><a [routerLink]="['/email/send-email', comment.user_id[0]._id]" preserveQueryParams preserveFragment class="btn btn-green">Send Email</a>
               </tr>
-
             </tbody>
           </table>
         </div>

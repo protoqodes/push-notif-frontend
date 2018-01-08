@@ -24,15 +24,17 @@
     -o-transition: 0.2s ease-in-out;
     transition: 0.2s ease-in-out;
 
+    cursor: pointer;
+
     &:hover {
-        color: #42b66d;
+      color: #42b66d !important;
 
-        background: transparent;
+      background: transparent;
 
-        outline: none;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        box-shadow: none;
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
     }
 }
 
@@ -41,10 +43,24 @@
   display: block;
   padding: 8px 10px;
 
-  color: $brand-color;
+  color: $brand-color !important;
 
   background: #fff;
   border-radius: 30px;
+
+  cursor: pointer;
+
+  &:hover {
+      color: #fff !important;
+
+      background: transparent;
+      border: 2px solid #fff;
+
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+  }
 }
 
 .btn-dark-green {
@@ -55,4 +71,18 @@
 
   background: $dark-green;
   border-radius: 30px;
+
+  cursor: pointer;
+
+
+  &:hover {
+      color: $dark-green !important;
+
+      background: #fff;
+
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+  }
 }
