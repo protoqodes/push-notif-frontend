@@ -116,5 +116,19 @@ export class SessionService {
 				  }).toPromise();
 		}
 	}
+	Email = {
+		send : (title : string, email : string,message : string) => {
+		console.log(title)
+			return this.http.post(Config.baseUrl + '/emails/send',
+					{
+						title : title,
+						email : email,
+						message : message
+					}).
+				   map(response=>{
+				   		return response.json();
+				   }).toPromise();
+		}
+	}
 
 }

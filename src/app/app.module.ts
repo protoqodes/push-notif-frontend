@@ -19,7 +19,7 @@ import { EditPostModule } from './modules/dashboard/components/edit-post/edit-po
 import { AddUserModule } from './modules/dashboard/components/add-user/add-user.module'
 import { EditUserModule } from './modules/dashboard/components/edit-user/edit-user.module'
 import { UsersModule } from './modules/dashboard/components/users/users.module'
-import { SendEmailModule } from './modules/dashboard/components/send-email/send-email.module'
+import { SendEmailModule } from './modules/dashboard/components/emailsend/email-send.module'
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },

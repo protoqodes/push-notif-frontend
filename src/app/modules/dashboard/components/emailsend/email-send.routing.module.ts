@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SendEmailComponent } from './send-email.component';
+import { EmailSendComponent } from './email-send.component';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
-      { path: 'email/send/:id', component: SendEmailComponent }
+      { path: 'send/:email/:title', component: EmailSendComponent }
     ])
   ],
   exports: [RouterModule]
 })
-export class SendEmailRoutingModule { }
+export class EmailSendRoutingModule { }
