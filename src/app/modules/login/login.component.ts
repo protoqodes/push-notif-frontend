@@ -13,18 +13,23 @@ export class LoginComponent implements OnInit {
   	) { }
 
   ngOnInit() {
+    if(localStorage.getItem('user_id')){
+      this.router.navigate(['/dashboard']);
+    }
   }
   logForm(data : any){
     console.log('test')
   	this.api.Users.login(data.email,data.password)
     .then(user =>{ 
-        console.log(user);
         if(user.is_active == 0){
         throw new Error('Need to Confirm Code');
       }
-      
-      this.router.navigate(['/dashboard']);
-    	console.log(user)
+      localStorage.setItem('user_email',user.user.email);
+      localStorage.setItem('user_name',user.user.full_name);
+      localStorage.setItem('user_mobile',user.user.mobile);
+      localStorage.setItem('user_id',user.user._id);
+      //this.router.navigate(['/dashboard']);
+      location.reload()
     })
     .catch(error => {
       console.log(error)

@@ -24,6 +24,9 @@ export class EmailSendComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+  if(!localStorage.getItem('user_id')){
+       this.router.navigate(['/'])
+    }
   this.route.params.subscribe(params => {
   console.log(params)
     this.title = params['title'];

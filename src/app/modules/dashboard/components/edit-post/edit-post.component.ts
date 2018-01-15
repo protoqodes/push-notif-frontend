@@ -24,12 +24,16 @@ export class EditPostComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+  if(!localStorage.getItem('user_id')){
+       this.router.navigate(['/'])
+    }
     this.route.params.subscribe(params => {
       this.post_id = params['id']
       this.api.Posts.view(params['id']).then(post =>{
-          this.title = post.title
-          this.description = post.description
-          this.file_url = post.img
+      console.log(post)
+          this.title = post.results[0].title
+          this.description = post.results[0].description
+          this.file_url = post.results[0].img
       })
     
     })
@@ -41,7 +45,12 @@ export class EditPostComponent implements OnInit {
   }
   editPost(data :any){
   	console.log(data);
-  	console.log(this.file_url)
+    if(data.title == ''){
+      data.title = this.title;
+    }
+    if(data.description == ''){
+      data.description = this.description;
+    }
   	this.api.Posts.edit(this.post_id,data.title,data.description,this.file_url)
   	.then(post => {
   		this.router.navigate(['/dashboard']);

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
 declare var jquery: any;
 declare var $ : any;
 
@@ -8,10 +9,13 @@ declare var $ : any;
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
-  constructor() { }
+has_login : boolean = false;
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    if(localStorage.getItem('user_id')){
+        this.has_login =true;
+    }
   }
 
   toggleNavbar(){
@@ -25,5 +29,13 @@ export class NavbarComponent implements OnInit {
 
     $('body').toggleClass('open-menu');
     $('.navbar-toggler').toggleClass('open-menu');
+  }
+  logout(){
+      localStorage.removeItem('user_email');
+      localStorage.removeItem('user_name');
+      localStorage.removeItem('user_mobile');
+      localStorage.removeItem('user_id');
+      this.router.navigate(['/']);
+      location.reload();
   }
 }

@@ -27,6 +27,9 @@ export class AddUserComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  if(!localStorage.getItem('user_id')){
+       this.router.navigate(['/'])
+    }
   }
 
  fileUpload(){

@@ -84,8 +84,12 @@ export class SessionService {
 	              	 return response.json();
 	          }).toPromise();
 	    	},
-	    	list: () => {
-	    		return this.http.get(Config.baseUrl + "/posts/list")
+	    	list: (title : string,description : string, date_filter: string) => {
+	    		return this.http.post(Config.baseUrl + "/posts/list",{
+	    		title : title,
+	    		description : description,
+	    		date_filter :date_filter
+	    		})
 	                .map(response => {
 	              	 return response.json();
 	          }).toPromise();

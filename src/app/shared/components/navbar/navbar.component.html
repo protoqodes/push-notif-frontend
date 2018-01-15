@@ -1,4 +1,4 @@
-<header>
+<header *ngIf="has_login">
   <nav class="navbar fixed-top flex-row">
     <button (click)="toggleNavbar()" class="navbar-toggler align-self-center">
         <span class="icon-bar"></span>
@@ -21,7 +21,7 @@
           <a [routerLink]="['/email']" class="nav-link">Emails</a>
         </li>
       </ul>
-      <a href="/" class="btn btn-green btn-logout">Logout</a>
+      <a (click)="logout()" class="btn btn-green btn-logout">Logout</a>
     </div>
   </nav>
 </header>

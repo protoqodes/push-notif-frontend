@@ -41,6 +41,9 @@ export class EditUserComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    if(!localStorage.getItem('user_id')){
+       this.router.navigate(['/'])
+    }
     this.route.params.subscribe(params => {
       this.user_id = params['id']
       // this.api.Users.view(params['id']).then(user =>{

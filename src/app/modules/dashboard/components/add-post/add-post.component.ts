@@ -17,6 +17,9 @@ export class AddPostComponent implements OnInit {
   constructor(private api : SessionService, private router: Router) { }
 
   ngOnInit() {
+  if(!localStorage.getItem('user_id')){
+       this.router.navigate(['/'])
+    }
   }
   fileUpload(){
   	client.pick().then(data => {

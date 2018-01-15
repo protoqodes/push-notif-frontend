@@ -3,6 +3,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-md-5 left">
+        <input placeholder="title" (change)="title($event.target.value)" [ngModel]="title_post"/>
+        <input placeholder="description" (change)="description($event.target.value)" [ngModel]="descrition_post"/>
           <img src="assets/images/logo.png" alt="Company Logo" />
           <div class="description">
             <p>City Information Office Angeles City</p>
