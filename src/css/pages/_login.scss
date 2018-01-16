@@ -7,14 +7,28 @@
 .login {
     position: relative;
     height: 100vh;
+    overflow: hidden;
 
     background-image: url("../assets/images/bg-login.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    // adjust
-    // overflow: hidden;
+    &:before {
+      position: absolute;
+      top: 169px;
+      right: -25vh;
+      z-index: 1;
+      
+      content: '';
+      width: 175%;
+      height: 307px;
+      background: #a6d23f;
+      border-bottom: 100px solid #9dc938;
+
+      -webkit-transform: rotate(-25deg);
+      transform: rotate(-25deg);
+    }
 
     .holder {
         position: absolute;
@@ -29,28 +43,10 @@
         max-width: 540px;
         max-height: 470px;
 
-        background: #fff;
+        background: $dark-green;
         -webkit-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.3);
         -moz-box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.3);
         box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.3);
-
-        // adjust
-        /* &:after {
-            position: absolute;
-            top: 0;
-            right: -95%;
-            z-index: -1;
-            content: '';
-
-            width: 300%;
-            height: 460px;
-
-            background: #42b66d;
-            -webkit-transform: rotate(-38deg);
-            -ms-transform: rotate(-38deg);
-            transform: rotate(-38deg);
-        }
-        */
 
         form {
             img,
@@ -70,28 +66,28 @@
                 margin-top: 25px;
                 width: 100%;
 
-                color: #42b66d;
+                color: #fff;
                 letter-spacing: 1.5px;
 
-                background: #f8f8f8;
+                background: $brand-color;
                 border: 0;
-                border-bottom: 3px solid #42b66d;
+                border-bottom: 3px solid #a6d23f;
             }
 
             input::-webkit-input-placeholder {
-                color: #42b66d;
+                color: #396571;
                 letter-spacing: 1.5px;
             }
             input::-moz-placeholder {
-                color: #42b66d;
+                color: #396571;
                 letter-spacing: 1.5px;
             }
             input:-ms-input-placeholder {
-                color: #42b66d;
+                color: #396571;
                 letter-spacing: 1.5px;
             }
             input:-moz-placeholder {
-                color: #42b66d;
+                color: #396571;
                 letter-spacing: 1.5px;
             }
 
@@ -121,7 +117,7 @@
                     font-size: 14px;
                     letter-spacing: 1px;
 
-                    border-bottom: 2px solid #42b66d;
+                    border-bottom: 2px solid #a6d23f;
                 }
 
                 .btn-green {

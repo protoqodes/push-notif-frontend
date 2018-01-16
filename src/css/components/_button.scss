@@ -8,15 +8,15 @@
 .btn-green,
 .upload-btn {
     display: block;
-    padding: 4px;
+    padding: 6px auto;
     margin: 0 0 5px;
 
     font-size: 15px;
     color: #fff !important;
     letter-spacing: 3px;
 
-    background: #42b66d;
-    border: 2px solid #42b66d;
+    background: #a6d23f;
+    border: 2px solid transparent;
     border-radius: 30px;
 
     -webkit-transition: 0.2s ease-in-out;
@@ -27,7 +27,7 @@
     cursor: pointer;
 
     &:hover {
-      color: #42b66d !important;
+      color: #a6d23f !important;
 
       background: transparent;
 
