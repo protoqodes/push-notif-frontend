@@ -17,7 +17,7 @@ export class SessionService {
 	              	 return response.json();
 	          }).toPromise();
 	    	},
-        add: (first_name: string,last_name : string,mobile : string, email: string, username : string , password: string, is_active:number,img : string) => {
+        add: (first_name: string,last_name : string,mobile : string, email: string, username : string , password: string, is_active:number,img : string,permission) => {
               return this.http.post(Config.baseUrl + "/users/add",
                    {
                     first_name : first_name,
@@ -27,15 +27,16 @@ export class SessionService {
                     username: username,
                     password: password,
                     is_active: 1,
-                    img : img
+                    img : img,
+                    permission : permission
                   })
                     .map(response => {
                      return response.json();
               }).toPromise();
           },
 
-        list: () => {
-	    		return this.http.get(Config.baseUrl + "/users/list")
+        list: (is_admin : string) => {
+	    		return this.http.get(Config.baseUrl + "/users/list/" + is_admin)
 	                .map(response => {
 	              	 return response.json();
 	          }).toPromise();

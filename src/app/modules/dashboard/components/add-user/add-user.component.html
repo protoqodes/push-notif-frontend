@@ -26,6 +26,13 @@
               <div class="form-group col-12 col-md-6">
                 <input class="form-control" type="text" name="phone_number" [(ngModel)]="phone_number" placeholder="Phone Number">
               </div>
+              <div class="form-group col-12 col-md-6" *ngIf="is_super_admin">
+                <select class="form-control" type="text" name="permission" [(ngModel)]="permission" placeholder="Role">
+                    <option disabled  selected>Choose Role</option>
+                    <option value="2">Admin</option>
+                    <option value="0">User</option>
+                </select>
+              </div>
                <div class="form-group upload-holder">
                   <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="upload-btn btn-white">
                   <img src="assets/images/icon-upload.png" alt="">

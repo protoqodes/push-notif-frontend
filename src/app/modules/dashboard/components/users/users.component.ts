@@ -17,11 +17,23 @@ export class UsersComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.api.Users.list()
+    if(!localStorage.getItem('user_id')){
+       this.router.navigate(['/'])
+    }
+    if(localStorage.getItem('permission') == '1'){
+    this.api.Users.list('0')
     .then(users =>{
        this.DataArray = <Array<Object>> users;
        console.log(this.DataArray);
     });
+    }
+    else{
+    this.api.Users.list('1')
+    .then(users =>{
+       this.DataArray = <Array<Object>> users;
+       console.log(this.DataArray);
+    });
+    } 
   }
 
   deleteUser(user){

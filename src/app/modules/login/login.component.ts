@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('user_name',user.user.full_name);
       localStorage.setItem('user_mobile',user.user.mobile);
       localStorage.setItem('user_id',user.user._id);
+      localStorage.setItem('permission',user.user.permission);
       //this.router.navigate(['/dashboard']);
       location.reload()
     })
