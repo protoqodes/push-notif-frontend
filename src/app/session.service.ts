@@ -135,5 +135,36 @@ export class SessionService {
 				   }).toPromise();
 		}
 	}
+	Feedback = {
+		list : () =>{
+			return this.http.post(Config.baseUrl + "/feedback/list",{}).
+				  map(response=>{
+				  	return response.json();
+				  }).toPromise();
+		},
+		reply:(feedback_id: string,user_id : string,email : string,description : string) => {
+                return this.http.post(Config.baseUrl + "/feedback/reply",
+                     {
+                     	feedback_id: feedback_id,
+                        user_id: user_id,
+                        email : email,
+                        description : description
+                    })
+                      .map(response => {
+                       return response.json();
+                }).toPromise();
+
+          },
+           verify_user:(user_id: string) => {
+	          return this.http.post(Config.baseUrl + "/feedback/verify/"+ user_id,
+	          		 {
+	          		  	user_id: user_id
+	          		})
+	                .map(response => {
+	              	 return response.json();
+	          }).toPromise();
+
+	    }
+	}
 
 }

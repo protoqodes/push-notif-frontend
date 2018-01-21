@@ -20,10 +20,15 @@ import { AddUserModule } from './modules/dashboard/components/add-user/add-user.
 import { EditUserModule } from './modules/dashboard/components/edit-user/edit-user.module'
 import { UsersModule } from './modules/dashboard/components/users/users.module'
 import { SendEmailModule } from './modules/dashboard/components/emailsend/email-send.module'
+import { FeedbacksModule } from './modules/dashboard/components/feedbacks/feedbacks.module'
+import { ReplyFeedbackModule } from './modules/dashboard/components/reply_feedback/reply_feedback.module'
+import { FeedbackVerifyComponent } from './modules/dashboard/components/feedback_verify/feedback_verify.component'
+
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'activated_user/:id', component: ActiveEmailComponent},
+  { path: 'verify/:id', component: FeedbackVerifyComponent},
   { path: '', component: LoginComponent }
 ];
 @NgModule({
@@ -32,7 +37,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    ActiveEmailComponent
+    ActiveEmailComponent,
+    FeedbackVerifyComponent
   ],
   //Modules
   imports: [
@@ -51,7 +57,9 @@ const appRoutes: Routes = [
     UsersModule,
     EditUserModule,
     EmailModule,
-    SendEmailModule
+    SendEmailModule,
+    FeedbacksModule,
+    ReplyFeedbackModule
   ],
   // Services
   providers: [SessionService],
