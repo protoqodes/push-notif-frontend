@@ -12,7 +12,7 @@
     margin: 0 0 5px;
 
     font-size: 15px;
-    color: #fff;
+    color: #fff !important;
     letter-spacing: 3px;
 
     background: #05512a;
@@ -27,7 +27,7 @@
     cursor: pointer;
 
     &:hover {
-      color: #fff;
+      color: #fff !important;
 
       background: $brand-color;
 
@@ -37,7 +37,6 @@
       box-shadow: none;
     }
 }
-
 
 .btn-white {
   display: block;

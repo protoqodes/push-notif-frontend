@@ -24,12 +24,12 @@
                 <td>{{feedback.description}}</td>
                 <td>
                <!--   <a [routerLink]="['/user/edit',  feedback.user_id[0]._id]" preserveQueryParams preserveFragment  class="btn btn-green">Edit</a> -->
-                  <a *ngIf="feedback.is_replied === 0" [routerLink]="['/feedback/reply_feedback', feedback._id,feedback.user_id[0]._id]" preserveQueryParams preserveFragment  class="btn btn-green">Reply</a>
+                <a *ngIf="feedback.is_replied === 0" [routerLink]="['/feedback/reply_feedback', feedback._id,feedback.user_id[0]._id]" preserveQueryParams preserveFragment  class="btn btn-green">Reply</a>
 
                 <a *ngIf="feedback.is_replied === 1"  class="btn btn-green">Replied</a>
 
                 </td>
-                
+
               </tr>
             </tbody>
           </table>
