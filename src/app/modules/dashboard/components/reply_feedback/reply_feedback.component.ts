@@ -41,6 +41,7 @@ export class ReplyFeedbackComponent implements OnInit {
 		this.api.Feedback.reply(this.feedback_id,this.user_id,data.email,data.description)
 		    .then(feedback =>{
 		    	console.log(feedback);
+		    	this.router.navigate(['/feedbacks'])
 		    });
 
 	}
