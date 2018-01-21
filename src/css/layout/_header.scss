@@ -138,13 +138,14 @@ header {
       }
 
       .btn-logout {
+        border: 2px #fff solid;
         margin: auto auto 0;
         width: 200px;
 
         @include on-event() {
-          color: $brand-color;
+          color: #fff;
 
-          background: #fff;
+          background: transparent;
         }
       }
     }

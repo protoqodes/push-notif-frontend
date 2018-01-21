@@ -18,7 +18,7 @@
                 <input class="form-control" type="text" name="username" [(ngModel)]="username" placeholder="Username">
               </div>
               <div class="form-group col-12 col-md-6">
-                <input class="form-control" type="password" name="password" [(ngModel)]="password" placeholder="password">
+                <input class="form-control" type="password" name="password" [(ngModel)]="password" placeholder="Password">
               </div>
               <div class="form-group col-12 col-md-6">
                 <input class="form-control" type="email" name="email_add" [(ngModel)]="email" placeholder="Email Address">
@@ -26,21 +26,20 @@
               <div class="form-group col-12 col-md-6">
                 <input class="form-control" type="text" name="phone_number" [(ngModel)]="phone_number" placeholder="Phone Number">
               </div>
-              <div class="form-group col-12 col-md-6" *ngIf="is_super_admin">
+              <div class="form-group col-12 col-md-12" *ngIf="is_super_admin">
                 <select class="form-control" type="text" name="permission" [(ngModel)]="permission" placeholder="Role">
                     <option disabled  selected>Choose Role</option>
                     <option value="2">Admin</option>
                     <option value="0">User</option>
                 </select>
               </div>
-               <div class="form-group upload-holder">
+              <div class="form-group upload-holder d-flex justify-content-around">
                   <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="upload-btn btn-white">
-                  <img src="assets/images/icon-upload.png" alt="">
                   <span>Upload a Photo</span>
-                </div>
-              <div class="actions col-12">
-                <input type="submit"   value="Publish" class="btn btn-white" style="width: 100%;">
-                <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green">Cancel</a>
+              </div>
+              <div class="actions col-12 d-flex justify-content-center">
+                <input type="submit"   value="Publish" class="btn btn-white mx-2 w-50">
+                <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green mx-2 w-50">Cancel</a>
                 <!-- <a href="#" class="btn btn-dark-green">Cancel</a> -->
               </div>
             </div>
