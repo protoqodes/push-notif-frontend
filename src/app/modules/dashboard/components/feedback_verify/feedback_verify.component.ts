@@ -24,7 +24,10 @@ export class FeedbackVerifyComponent implements OnInit {
       this.user_id = get_id[2];
       this.api.Feedback.verify_user(this.user_id).then(user =>{
         console.log(user);
-            this.router.navigate(['/'])
+        setTimeout(()=>{    //<<<---    using ()=> syntax
+            this.router.navigate(['/']);
+         },3000);
+
       })
 	}
 }
