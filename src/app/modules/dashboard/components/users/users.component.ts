@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SessionService } from '../../../../session.service';
 import { ActivatedRoute,Router } from '@angular/router';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-users',
@@ -10,10 +11,13 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class UsersComponent implements OnInit {
    public DataArray: Array<Object>;
+  closeResult: string;
+
   constructor(
     private api : SessionService,
     private route: ActivatedRoute,
     private router: Router,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit() {
@@ -34,6 +38,24 @@ export class UsersComponent implements OnInit {
        console.log(this.DataArray);
     });
     } 
+  }
+
+  open(content) {
+    this.modalService.open(content).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 
   deleteUser(user){

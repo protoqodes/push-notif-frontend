@@ -71,7 +71,13 @@ export class SessionService {
 	              	 return response.json();
 	          }).toPromise();
 
-	    }
+	    },
+	    // delete: (id: string) => {
+	    // 		return this.http.post(Config.baseUrl + "/users/delete/" + id)
+	    //             .map(response => {
+	    //           	 return response.json();
+	    //       }).toPromise();
+	    // },
 	 }
   Posts = {
 			add: (title: string,description : string,img : string) => {

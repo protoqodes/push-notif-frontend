@@ -23,7 +23,7 @@ import { SendEmailModule } from './modules/dashboard/components/emailsend/email-
 import { FeedbacksModule } from './modules/dashboard/components/feedbacks/feedbacks.module'
 import { ReplyFeedbackModule } from './modules/dashboard/components/reply_feedback/reply_feedback.module'
 import { FeedbackVerifyComponent } from './modules/dashboard/components/feedback_verify/feedback_verify.component'
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -42,6 +42,7 @@ const appRoutes: Routes = [
   ],
   //Modules
   imports: [
+  NgbModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
