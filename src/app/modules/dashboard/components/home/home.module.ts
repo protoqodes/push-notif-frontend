@@ -4,9 +4,10 @@ import { HomeComponent } from './home.component';
 import { HomeRoutingModule } from './home-routing.module';
 // import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  imports: [CommonModule, HomeRoutingModule,FormsModule],
+  imports: [NgbModule.forRoot(),CommonModule, HomeRoutingModule,FormsModule],
   declarations: [HomeComponent],
   exports: [HomeComponent]
 })

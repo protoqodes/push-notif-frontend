@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {  Router } from '@angular/router';
 import { SessionService } from '../../../../session.service'; 
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   moduleId: module.id,
   selector: 'app-home',
@@ -13,7 +14,8 @@ export class HomeComponent implements OnInit {
   title_post:string='';
   description_post:string='';
   date_filter : string='';
-  constructor(private api :SessionService,private router: Router) { }
+   modalReference :any;
+  constructor(private api :SessionService,private router: Router, private modalService: NgbModal) { }
 
   ngOnInit() {
     if(!localStorage.getItem('user_id')){
@@ -45,6 +47,26 @@ export class HomeComponent implements OnInit {
         this.hasData =true
 
       })
+  }
+
+   open(content) {
+    this.modalReference  = this.modalService.open(content);
+
+    this.modalReference.result.then((result) => {
+     
+    }, (reason) => {
+     
+    });
+  }
+
+  deleteUser(post_id){
+    console.log(this.modalService);
+
+    this.api.Posts.delete(post_id)
+    .then(users =>{
+        this.modalReference.close();
+        this.ngOnInit();
+    });
   }
 
 }

@@ -11,7 +11,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class UsersComponent implements OnInit {
    public DataArray: Array<Object>;
-  closeResult: string;
+    modalReference :any;
 
   constructor(
     private api : SessionService,
@@ -41,10 +41,22 @@ export class UsersComponent implements OnInit {
   }
 
   open(content) {
-    this.modalService.open(content).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
+    this.modalReference  = this.modalService.open(content);
+
+    this.modalReference.result.then((result) => {
+     
     }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+     
+    });
+  }
+
+  deleteUser(user_id){
+    console.log(this.modalService);
+
+    this.api.Users.delete(user_id)
+    .then(users =>{
+        this.modalReference.close();
+        this.ngOnInit();
     });
   }
 
@@ -56,10 +68,6 @@ export class UsersComponent implements OnInit {
     } else {
       return  `with: ${reason}`;
     }
-  }
-
-  deleteUser(user){
-
   }
 
 }
