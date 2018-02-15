@@ -36,9 +36,11 @@
               <div class="form-group upload-holder d-flex justify-content-around">
                   <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="upload-btn btn-white">
                   <span>Upload a Photo</span>
+                  
+                  <span><img src="{{file_url}}" alt=""></span>
               </div>
               <div class="actions col-12 d-flex justify-content-center">
-                <input type="submit"   value="Publish" class="btn btn-white mx-2 w-50">
+                <input type="submit"   value="Add User" class="btn btn-white mx-2 w-50">
                 <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green mx-2 w-50">Cancel</a>
                 <!-- <a href="#" class="btn btn-dark-green">Cancel</a> -->
               </div>

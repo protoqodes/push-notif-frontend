@@ -23,7 +23,7 @@ export class FeedbacksComponent implements OnInit {
 		    	var data = [];
 		    	if(feedback){
 		    		feedback.forEach((item, index) => {
-				  		if(item.user_id[0].is_verify === '1'){
+				  		if(item.user_id[0].is_verify == '1'){
 				  			data.push(item)
 				  		}
 					});
