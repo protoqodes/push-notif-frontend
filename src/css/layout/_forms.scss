@@ -58,7 +58,9 @@
 
       img {
         margin-right: 10px;
-        width: 40px;
+        width: 90%;
+        height: 200px;
+        object-fit: cover;
       }
 
       @include respond-to(xs) {

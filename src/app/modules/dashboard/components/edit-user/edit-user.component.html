@@ -53,14 +53,23 @@
               <div class="form-group col-12 col-md-6">
                 <input class="form-control" type="password" name="password" [(ngModel)]="password" placeholder="Password">
               </div>
+              <div *ngIf="!file_url" class="form-group upload-holder d-flex justify-content-around">
+                <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="upload-btn btn-white">
+                <span>Upload a Photo</span>
+              </div>
+              <div *ngIf="file_url" class="form-group upload-holder">
+                <span><img src="{{file_url}}" alt="" style="width: 200px;"></span>
+                <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="mt-4 mx-auto upload-btn btn-white">
+              </div>
+              <!--
               <div class="form-group upload-holder d-flex justify-content-around">
                   <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="upload-btn btn-white">
                   <span>Upload a Photo</span>
                   <span><img src="{{file_url}}" alt=""></span>
-                </div>
-              <div class="actions col-12">
-                <input type="submit" value="Edit" class="btn btn-white">
-                            <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green">Cancel</a>
+                </div> -->
+              <div class="actions col-12 d-flex">
+                <input type="submit" value="Edit" class="btn btn-white upload-btn mx-1 w-50">
+                <a [routerLink]="['/users']" preserveQueryParams preserveFragment  class="btn btn-dark-green mx-1 w-50">Cancel</a>
                 <!-- <a href="#" class="btn btn-dark-green">Cancel</a> -->
               </div>
             </div>

@@ -15,10 +15,13 @@
                 <div class="form-group">
                   <textarea ngModel class="form-control" name="description" placeholder="Post Content"></textarea>
                 </div>
-                <div class="form-group upload-holder d-flex justify-content-around">
+                <div *ngIf="!file_url" class="form-group upload-holder d-flex justify-content-around">
                   <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="upload-btn btn-white">
                   <span>Upload a Photo</span>
+                </div>
+                <div *ngIf="file_url" class="form-group upload-holder">
                   <span><img src="{{file_url}}" alt=""></span>
+                  <input (click)="fileUpload()" type="button" name="" value="UPLOAD" class="mt-4 mx-auto upload-btn btn-white">
                 </div>
               </div>
               <div class="col-12 col-md-3">
