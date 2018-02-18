@@ -6,12 +6,15 @@
 .dashboard {
   .right {
     padding: 0 15px 0 30px;
-
+    .searchCSS{
+    text-align: center;
+    }
     h4 {
       font-family: $text-font-lato-bold;
       font-size: 26px;
       color: $brand-color;
       letter-spacing: 2px;
+
     }
 
     .filter-holder {

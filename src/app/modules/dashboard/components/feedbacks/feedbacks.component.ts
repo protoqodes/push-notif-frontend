@@ -9,28 +9,35 @@ import { ActivatedRoute,Router } from '@angular/router';
   styleUrls: ['./feedbacks.component.css']
 })
 export class FeedbacksComponent implements OnInit {
-	public DataArray: Array<Object>;
+	public feedbacks: Array<Object>;
 	  constructor(
 	    private api : SessionService,
 	    private route: ActivatedRoute,
 	    private router: Router,
 	  ) { }
 
-
 	ngOnInit(){
-		this.api.Feedback.list()
-		    .then(feedback =>{
-		    	var data = [];
+		var data = [];
+		this.api.Feedback.list().then(feedback =>{
 		    	if(feedback){
+		    		console.log(feedback);
 		    		feedback.forEach((item, index) => {
-				  		if(item.user_id[0].is_verify == '1'){
+			    		if(item.user_id.length == 0){
+			    			return false;
+			    		}
+		    			//console.log(item.user_id[0].is_verify);
+				  		if(
+				  		item.user_id[0].is_verify == '1' && 
+				  		item.user_id[0].is_verify != undefined){
 				  			data.push(item)
 				  		}
 					});
+					}
 
-		    	}
-		       this.DataArray = <Array<Object>> data;
-		       console.log(this.DataArray);
 		    });
-	}
+		     this.feedbacks = <Array<Object>> data;
+		     console.log(this.feedbacks);
+
+		    };
+	
 }
